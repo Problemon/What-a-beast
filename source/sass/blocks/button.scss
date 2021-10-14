@@ -1,0 +1,96 @@
+.button {
+  display: block;
+  padding-top: 13px;
+  padding-bottom: 7px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border: 3px solid $color-amber;
+  border-radius: 150px;
+
+  font-size: 30px;
+  text-transform: uppercase;
+  color: $color-dark-green;
+
+  background-color: $color-dark-yellow;
+  cursor: pointer;
+  transition: color 0.3s ease, backgroung-color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    color: $color-white;
+    background-color: $color-orange;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.button--play {
+  position: relative;
+
+  padding-right: 50px;
+  padding-left: 50px;
+
+  font-size: 47px;
+  -webkit-tap-highlight-color: transparent;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 195px;
+    bottom: 52px;
+
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+
+    background-image: url("../img/decor/butterfly.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @media (max-width: $desktop-width) {
+      right: 162px;
+      bottom: 50px;
+      width: 80px;
+      height: 80px;
+    }
+
+    @media (max-width: $tablet-width) {
+      right: 130px;
+      bottom: 43px;
+      width: 70px;
+      height: 70px;
+    }
+
+    @media (max-width: 500px) {
+      right: 100px;
+      bottom: 38px;
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  @media (max-width: $desktop-width) {
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 40px;
+  }
+
+  @media (max-width: $tablet-width) {
+    padding-top: 11px;
+    padding-bottom: 6px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 35px;
+  }
+
+  @media (max-width: 500px) {
+    margin-top: 10px;
+    padding-top: 9px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 30px;
+  }
+}
+
