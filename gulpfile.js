@@ -49,10 +49,12 @@ exports.styles = styles;
 
 const scripts = () => {
   return gulp.src("source/js/*.js")
+    .pipe(sourcemap.init())
     .pipe(terser())
     .pipe(rename(function (path) {
       path.basename += ".min";
     }))
+    .pipe(sourcemap.write("."))
     .pipe(gulp.dest("build/js"));
 }
 

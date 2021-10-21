@@ -2,10 +2,15 @@
   position: relative;
 
   display: flex;
-  height: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100vh;
+
+  background-image: url("../img/background/bushes.jpg");
+  background-size: cover;
+  background-position: center;
+  transition: opacity 1s ease;
 
   &::before {
     content: "";
@@ -23,7 +28,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     opacity: 0.3;
-    z-index: -1;
     animation: flying-right 8s ease infinite;
 
     @media (max-width: 1400px) {
@@ -61,7 +65,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     opacity: 0.3;
-    z-index: -1;
     animation: flying-left 10s ease infinite;
 
     @media (max-width: 1400px) {
@@ -84,11 +87,17 @@
   }
 }
 
-.menu__game-title {
+.menu--hidden {
+  z-index: -1;
+  opacity: 0;
+}
+
+.menu__title {
   width: 500px;
   height: 400px;
 
   object-fit: contain;
+  user-select: none;
 
   @media (max-width: $desktop-width) {
     width: 400px;

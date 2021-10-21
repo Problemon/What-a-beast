@@ -8,16 +8,116 @@
   <link rel="stylesheet" href="css/style.min.css">
   <title>Кто живет в лесу?</title>
 </head>
-  <body class="page">
+  <body class="game">
     <h1 class="visually-hidden">Главное меню</h1>
-    <main class="page__container container">
-      <section class="page__menu menu">
+    <main class="game__main">
+      <section class="game__menu menu container" data-class="menu">
         <picture>
-          <source srcset="../img/decor/title.webp 1x, ../img/decor/title@2x.webp 2x">
-          <img class="menu__game-title" src="../img/decor/title.png" srcset="../img/decor/title@2x.webp 2x" width="500" height="400" alt="Кто живет в лесу?">
+          <source srcset="img/decor/title.webp 1x, img/decor/title@2x.webp 2x">
+          <img class="menu__title" src="img/decor/title.png" srcset="img/decor/title@2x.webp 2x" width="500" height="400" alt="Кто живет в лесу?" draggable="false">
         </picture>
-        <button class="menu__button button button--play">Играть!</button>
+        <button class="menu__button menu__button--next button button--play">Играть!</button>
+      </section>
+      <section class="game__elections elections elections--hidden container" data-class="elections">
+        <header class="elections__header">
+          <button class="elections__button elections__button--back button">Назад</button>
+          <h2 class="elections__title title">Выберите зверька</h2>
+        </header>
+        <ul class="elections__list">
+          <li class="elections__item" data-number="1">
+            <picture>
+              <source srcset="img/items/bunny.webp 1x, img/items/bunny@2x.webp 2x">
+              <img class="elections__image" src="img/items/bunny.png" srcset="img/items/bunny@2x.png 2x" width="200" height="200" alt="" draggable="false">
+            </picture>
+          </li>
+          <li class="elections__item" data-number="2">
+            <picture>
+              <source srcset="img/items/bear.webp 1x, img/items/bear@2x.webp 2x">
+              <img class="elections__image" src="img/items/bear.png" srcset="img/items/bear@2x.png 2x" width="200" height="200" alt="" draggable="false">
+            </picture>
+          </li>
+          <li class="elections__item" data-number="3">
+            <picture>
+              <source srcset="img/items/hedgehog.webp 1x, img/items/hedgehog@2x.webp 2x">
+              <img class="elections__image" src="img/items/hedgehog.png" srcset="img/items/hedgehog@2x.png 2x" width="200" height="200" alt="" draggable="false">
+            </picture>
+          </li>
+        </ul>
+      </section>
+      <section class="game__options options options--hidden container" data-class="options">
+        <ul class="options__level level level--hidden" data-class="level">
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Где живет зайчик?</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="1-1">
+                <picture>
+                  <source srcset="img/items/forest.webp 1x, img/items/forest@2x.webp 2x">
+                  <img class="step__image" src="img/items/forest.png" srcset="img/items/forest@2x.png 2x" width="300" height="300" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="1-1">
+                <picture>
+                  <source srcset="img/items/house.webp 1x, img/items/house@2x.webp 2x">
+                  <img class="step__image" src="img/items/house.png" srcset="img/items/house@2x.png 2x" width="300" height="300" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Чем покрыто тело зайчика?</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" name="1-2">
+                <picture>
+                  <source srcset="img/items/bunny-fur.webp 1x, img/items/bunny-fur@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/bunny-fur.png" srcset="img/items/bunny-fur@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" name="1-2">
+                <picture>
+                  <source srcset="img/items/needles.webp 1x, img/items/needles@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/needles.png" srcset="img/items/needles@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" name="1-2">
+                <picture>
+                  <source srcset="img/items/scales.webp 1x, img/items/scales@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/scales.png" srcset="img/items/scales@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+        </ul>
+      </section>
+      <section class="game__end end end--hidden container" data-class="end">
+        <h2 class="end__title title title--end">ПОЗДРАВЛЯЕМ!</h2>
+        <p class="end__text">
+          <output class="end__right-answers">0&nbsp;</output>правильных ответов! А теперь придумайте историю из них:
+        </p>
+        <ul class="end__answer-list">
+          <template id="answer">
+            <li class="end__answer-item">
+              <img class="end__answer-image" src="#" alt="">
+              <h3 class="end__answer-title">title</h3>
+            </li>
+          </template>
+        </ul>
+        <button class="end__button button button--end">завершить</button>
+        <button class="end__button button button--again">начать заново</button>
       </section>
     </main>
+    <script src="js/main.min.js" type="module"></script>
   </body>
 </html>

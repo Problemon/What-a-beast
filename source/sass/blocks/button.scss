@@ -1,17 +1,18 @@
 .button {
   display: block;
-  padding-top: 13px;
-  padding-bottom: 7px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-top: 11px;
+  padding-bottom: 6px;
+  padding-left: 25px;
+  padding-right: 25px;
   border: 3px solid $color-amber;
   border-radius: 150px;
 
-  font-size: 30px;
+  font-size: 25px;
   text-transform: uppercase;
   color: $color-dark-green;
 
   background-color: $color-dark-yellow;
+  user-select: none;
   cursor: pointer;
   transition: color 0.3s ease, backgroung-color 0.3s ease, transform 0.2s ease;
 
@@ -23,11 +24,37 @@
   &:active {
     transform: scale(0.9);
   }
+
+  @media (max-width: $desktop-width) {
+    font-size: 22px;
+  }
+
+  @media (max-width: 850px) {
+    padding-top: 9px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+
+    font-size: 20px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 18px;
+    padding-right: 18px;
+    padding-left: 18px;
+    padding-top: 8px;
+  }
+}
+
+.button--hidden {
+  visibility: hidden;
 }
 
 .button--play {
   position: relative;
 
+  padding-top: 13px;
+  padding-bottom: 7px;
   padding-right: 50px;
   padding-left: 50px;
 
@@ -94,3 +121,14 @@
   }
 }
 
+.button--next {
+  color: $color-dark-yellow;
+
+  border-color: $color-dark-green;
+  background-color: $color-green;
+
+  &:hover {
+    color: $color-white;
+    background-color: $color-dark-green;
+  }
+}
