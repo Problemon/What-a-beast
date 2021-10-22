@@ -1,10 +1,10 @@
-import StepsControle from './step.min.js';
+import { steps } from './step.min.js';
 import { removeClassHidden, addClassHidden } from './util.min.js';
 
-const ANSWERS = [
-  [1, 1],
-  [],
-  [],
+const RIGHT_ANSWERS = [
+  [1, 1, 2, 3, 2, 1, 2, 1],
+  [1, 2, 2, 1, 2, 3, 3, 1],
+  [1, 2, 2, 1, 3, 2, 1, 2],
 ];
 
 const gameLevels = document.querySelectorAll('.level');
@@ -16,12 +16,13 @@ const hideLevel = (level) => {
 const showLevel = (element) => {
   const indexLevel = Number(element.dataset.number) - 1;
   const currentLevel = gameLevels[indexLevel];
-  const answersOfLevel = ANSWERS[indexLevel];
-  const stepControle = new StepsControle(currentLevel, answersOfLevel);
+  const rightAnswersOfLevel = RIGHT_ANSWERS[indexLevel];
 
   removeClassHidden(currentLevel);
-  stepControle.activeButtons();
-  stepControle.showCurrentStep();
+  steps.level = currentLevel;
+  steps.rightAnswers = rightAnswersOfLevel;
+  steps.givenRightAnswers = [];
+  steps.showCurrentStep();
 };
 
 export { hideLevel, showLevel };
