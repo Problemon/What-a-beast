@@ -4,7 +4,7 @@ const launchGame = () => {
   showMenu();
 };
 
-launchGame();
+window.addEventListener('load', launchGame);
 
 export {launchGame};
 

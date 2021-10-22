@@ -11,7 +11,7 @@
   <body class="game">
     <h1 class="visually-hidden">Главное меню</h1>
     <main class="game__main">
-      <section class="game__menu menu container" data-class="menu">
+      <section class="game__menu menu menu--hidden container" data-class="menu">
         <picture>
           <source srcset="img/decor/title.webp 1x, img/decor/title@2x.webp 2x">
           <img class="menu__title" src="img/decor/title.png" srcset="img/decor/title@2x.webp 2x" width="500" height="400" alt="Кто живет в лесу?" draggable="false">
@@ -76,24 +76,674 @@
             </header>
             <fieldset class="step__list">
               <label class="step__item">
-                <input class="step__radio visually-hidden" type="radio" name="1-2">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="1-2">
                 <picture>
                   <source srcset="img/items/bunny-fur.webp 1x, img/items/bunny-fur@2x.webp 2x">
                   <img class="step__image step__image--rounded" src="img/items/bunny-fur.png" srcset="img/items/bunny-fur@2x.png 2x" width="200" height="200" alt="" draggable="false">
                 </picture>
               </label>
               <label class="step__item">
-                <input class="step__radio visually-hidden" type="radio" name="1-2">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="1-2">
                 <picture>
                   <source srcset="img/items/needles.webp 1x, img/items/needles@2x.webp 2x">
                   <img class="step__image step__image--rounded" src="img/items/needles.png" srcset="img/items/needles@2x.png 2x" width="200" height="200" alt="" draggable="false">
                 </picture>
               </label>
               <label class="step__item">
-                <input class="step__radio visually-hidden" type="radio" name="1-2">
+                <input class="step__radio visually-hidden" type="radio" value="3" name="1-2">
                 <picture>
                   <source srcset="img/items/scales.webp 1x, img/items/scales@2x.webp 2x">
                   <img class="step__image step__image--rounded" src="img/items/scales.png" srcset="img/items/scales@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Найдите части тела зайчика:</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="1-3">
+                <picture>
+                  <source srcset="img/items/hadgehog-mouth.webp 1x, img/items/hadgehog-mouth@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/hadgehog-mouth.png" srcset="img/items/hadgehog-mouth@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="1-3">
+                <picture>
+                  <source srcset="img/items/bunny-paws.webp 1x, img/items/bunny-paws@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/bunny-paws.png" srcset="img/items/bunny-paws@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="3" name="1-3">
+                <picture>
+                  <source srcset="img/items/fox-ears.webp 1x, img/items/fox-ears@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/fox-ears.png" srcset="img/items/fox-ears@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Найдите части тела зайчика:</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="1-4">
+                <picture>
+                  <source srcset="img/items/hadgehog-ears.webp 1x, img/items/hadgehog-ears@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/hadgehog-ears.png" srcset="img/items/hadgehog-ears@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="1-4">
+                <picture>
+                  <source srcset="img/items/bear-mouth.webp 1x, img/items/bear-mouth@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/bear-mouth.png" srcset="img/items/bear-mouth@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="3" name="1-4">
+                <picture>
+                  <source srcset="img/items/bunny-ears.webp 1x, img/items/bunny-ears@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/bunny-ears.png" srcset="img/items/bunny-ears@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Найдите части тела зайчика:</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="1-5">
+                <picture>
+                  <source srcset="img/items/bear-tail.webp 1x, img/items/bear-tail@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/bear-tail.png" srcset="img/items/bear-tail@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="1-5">
+                <picture>
+                  <source srcset="img/items/bunny-tail.webp 1x, img/items/bunny-tail@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/bunny-tail.png" srcset="img/items/bunny-tail@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="3" name="1-5">
+                <picture>
+                  <source srcset="img/items/fox-paws.webp 1x, img/items/fox-paws@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/fox-paws.png" srcset="img/items/fox-paws@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Найдите части тела зайчика:</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="1-6">
+                <picture>
+                  <source srcset="img/items/bunny-mouth.webp 1x, img/items/bunny-mouth@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/bunny-mouth.png" srcset="img/items/bunny-mouth@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="1-6">
+                <picture>
+                  <source srcset="img/items/bear-ears.webp 1x, img/items/bear-ears@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/bear-ears.png" srcset="img/items/bear-ears@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="3" name="1-6">
+                <picture>
+                  <source srcset="img/items/hadgehog-tail.webp 1x, img/items/hadgehog-tail@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/hadgehog-tail.png" srcset="img/items/hadgehog-tail@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Чем питается зайчик?</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="1-7">
+                <picture>
+                  <source srcset="img/items/fish.webp 1x, img/items/fish@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/fish.png" srcset="img/items/fish@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="1-7">
+                <picture>
+                  <source srcset="img/items/wood.webp 1x, img/items/wood@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/wood.png" srcset="img/items/wood@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="3" name="1-7">
+                <picture>
+                  <source srcset="img/items/honey.webp 1x, img/items/honey@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/honey.png" srcset="img/items/honey@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Чем питается зайчик?</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="1-8">
+                <picture>
+                  <source srcset="img/items/grass.webp 1x, img/items/grass@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/grass.png" srcset="img/items/grass@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="1-8">
+                <picture>
+                  <source srcset="img/items/worm.webp 1x, img/items/worm@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/worm.png" srcset="img/items/worm@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="3" name="1-7">
+                <picture>
+                  <source srcset="img/items/meat.webp 1x, img/items/meat@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/meat.png" srcset="img/items/meat@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+        </ul>
+        <ul class="options__level level level--hidden" data-class="level">
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Где живет мишка?</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="2-1">
+                <picture>
+                  <source srcset="img/items/forest.webp 1x, img/items/forest@2x.webp 2x">
+                  <img class="step__image" src="img/items/forest.png" srcset="img/items/forest@2x.png 2x" width="300" height="300" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="2-1">
+                <picture>
+                  <source srcset="img/items/house.webp 1x, img/items/house@2x.webp 2x">
+                  <img class="step__image" src="img/items/house.png" srcset="img/items/house@2x.png 2x" width="300" height="300" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Чем покрыто тело мишки?</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="2-2">
+                <picture>
+                  <source srcset="img/items/needles.webp 1x, img/items/needles@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/needles.png" srcset="img/items/needles@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="2-2">
+                <picture>
+                  <source srcset="img/items/bear-fur.webp 1x, img/items/bear-fur@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/bear-fur.png" srcset="img/items/bear-fur@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="3" name="2-2">
+                <picture>
+                  <source srcset="img/items/scales.webp 1x, img/items/scales@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/scales.png" srcset="img/items/scales@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Найдите части тела мишки:</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="2-3">
+                <picture>
+                  <source srcset="img/items/hadgehog-paws.webp 1x, img/items/hadgehog-paws@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/hadgehog-paws.png" srcset="img/items/hadgehog-paws@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="2-3">
+                <picture>
+                  <source srcset="img/items/bear-tail.webp 1x, img/items/bear-tail@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/bear-tail.png" srcset="img/items/bear-tail@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="3" name="2-3">
+                <picture>
+                  <source srcset="img/items/fox-tail.webp 1x, img/items/fox-tail@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/fox-tail.png" srcset="img/items/fox-tail@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Найдите части тела мишки:</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="2-4">
+                <picture>
+                  <source srcset="img/items/bear-paws.webp 1x, img/items/bear-paws@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/bear-paws.png" srcset="img/items/bear-paws@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="2-4">
+                <picture>
+                  <source srcset="img/items/bunny-mouth.webp 1x, img/items/bunny-mouth@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/bunny-mouth.png" srcset="img/items/bunny-mouth@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="3" name="2-4">
+                <picture>
+                  <source srcset="img/items/hadgehog-mouth.webp 1x, img/items/hadgehog-mouth@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/hadgehog-mouth.png" srcset="img/items/hadgehog-mouth@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Найдите части тела мишки:</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="2-5">
+                <picture>
+                  <source srcset="img/items/fox-paws.webp 1x, img/items/fox-paws@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/fox-paws.png" srcset="img/items/fox-paws@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="2-5">
+                <picture>
+                  <source srcset="img/items/bear-ears.webp 1x, img/items/bear-ears@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/bear-ears.png" srcset="img/items/bear-ears@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="3" name="2-5">
+                <picture>
+                  <source srcset="img/items/bunny-ears.webp 1x, img/items/bunny-ears@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/bunny-ears.png" srcset="img/items/bunny-ears@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Найдите части тела мишки:</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="2-6">
+                <picture>
+                  <source srcset="img/items/hadgehog-ears.webp 1x, img/items/hadgehog-ears@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/hadgehog-ears.png" srcset="img/items/hadgehog-ears@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="2-6">
+                <picture>
+                  <source srcset="img/items/fox-ears.webp 1x, img/items/fox-ears@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/fox-ears.png" srcset="img/items/fox-ears@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="3" name="2-6">
+                <picture>
+                  <source srcset="img/items/bear-mouth.webp 1x, img/items/bear-mouth@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/bear-mouth.png" srcset="img/items/bear-mouth@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Чем питается мишка?</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="2-7">
+                <picture>
+                  <source srcset="img/items/wood.webp 1x, img/items/wood@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/wood.png" srcset="img/items/wood@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="2-7">
+                <picture>
+                  <source srcset="img/items/grass.webp 1x, img/items/grass@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/grass.png" srcset="img/items/grass@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="3" name="2-7">
+                <picture>
+                  <source srcset="img/items/honey.webp 1x, img/items/honey@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/honey.png" srcset="img/items/honey@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Чем питается мишка?</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="2-8">
+                <picture>
+                  <source srcset="img/items/meat.webp 1x, img/items/meat@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/meat.png" srcset="img/items/meat@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="2-8">
+                <picture>
+                  <source srcset="img/items/cabbage.webp 1x, img/items/cabbage@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/cabbage.png" srcset="img/items/cabbage@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="3" name="2-8">
+                <picture>
+                  <source srcset="img/items/milk.webp 1x, img/items/milk@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/milk.png" srcset="img/items/milk@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+        </ul>
+        <ul class="options__level level level--hidden" data-class="level">
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Где живет ёжик?</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="3-1">
+                <picture>
+                  <source srcset="img/items/forest.webp 1x, img/items/forest@2x.webp 2x">
+                  <img class="step__image" src="img/items/forest.png" srcset="img/items/forest@2x.png 2x" width="300" height="300" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="3-1">
+                <picture>
+                  <source srcset="img/items/house.webp 1x, img/items/house@2x.webp 2x">
+                  <img class="step__image" src="img/items/house.png" srcset="img/items/house@2x.png 2x" width="300" height="300" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Чем покрыто тело ёжика?</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="3-2">
+                <picture>
+                  <source srcset="img/items/scales.webp 1x, img/items/scales@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/scales.png" srcset="img/items/scales@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="3-2">
+                <picture>
+                  <source srcset="img/items/needles.webp 1x, img/items/needles@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/needles.png" srcset="img/items/needles@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="3" name="3-2">
+                <picture>
+                  <source srcset="img/items/bear-fur.webp 1x, img/items/bear-fur@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/bear-fur.png" srcset="img/items/bear-fur@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Найдите части тела ёжика:</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="3-3">
+                <picture>
+                  <source srcset="img/items/bunny-tail.webp 1x, img/items/bunny-tail@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/bunny-tail.png" srcset="img/items/bunny-tail@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="3-3">
+                <picture>
+                  <source srcset="img/items/hadgehog-mouth.webp 1x, img/items/hadgehog-mouth@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/hadgehog-mouth.png" srcset="img/items/hadgehog-mouth@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="3" name="3-3">
+                <picture>
+                  <source srcset="img/items/bear-ears.webp 1x, img/items/bear-ears@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/bear-ears.png" srcset="img/items/bear-ears@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Найдите части тела ёжика:</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="3-4">
+                <picture>
+                  <source srcset="img/items/hadgehog-tail.webp 1x, img/items/hadgehog-tail@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/hadgehog-tail.png" srcset="img/items/hadgehog-tail@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="3-4">
+                <picture>
+                  <source srcset="img/items/fox-ears.webp 1x, img/items/fox-ears@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/fox-ears.png" srcset="img/items/fox-ears@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="3" name="3-4">
+                <picture>
+                  <source srcset="img/items/bunny-paws.webp 1x, img/items/bunny-paws@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/bunny-paws.png" srcset="img/items/bunny-paws@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Найдите части тела ёжика:</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="3-5">
+                <picture>
+                  <source srcset="img/items/fox-tail.webp 1x, img/items/fox-tail@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/fox-tail.png" srcset="img/items/fox-tail@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="3-5">
+                <picture>
+                  <source srcset="img/items/bear-tail.webp 1x, img/items/bear-tail@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/bear-tail.png" srcset="img/items/bear-tail@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="3" name="3-5">
+                <picture>
+                  <source srcset="img/items/hadgehog-ears.webp 1x, img/items/hadgehog-ears@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/hadgehog-ears.png" srcset="img/items/hadgehog-ears@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Найдите части тела ежика:</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="3-6">
+                <picture>
+                  <source srcset="img/items/fox-paws.webp 1x, img/items/fox-paws@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/fox-paws.png" srcset="img/items/fox-paws@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="3-6">
+                <picture>
+                  <source srcset="img/items/hadgehog-paws.webp 1x, img/items/hadgehog-paws@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/hadgehog-paws.png" srcset="img/items/hadgehog-paws@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="3" name="3-6">
+                <picture>
+                  <source srcset="img/items/bunny-mouth.webp 1x, img/items/bunny-mouth@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/bunny-mouth.png" srcset="img/items/bunny-mouth@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Чем питается ежик?</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="3-7">
+                <picture>
+                  <source srcset="img/items/worm.webp 1x, img/items/worm@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/worm.png" srcset="img/items/worm@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="3-7">
+                <picture>
+                  <source srcset="img/items/fish.webp 1x, img/items/fish@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/fish.png" srcset="img/items/fish@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="3" name="3-7">
+                <picture>
+                  <source srcset="img/items/mouse.webp 1x, img/items/mouse@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/mouse.png" srcset="img/items/mouse@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+            </fieldset>
+            <button class="step__button step__button--next button button--next button--hidden">Далее</button>
+          </li>
+          <li class="level__step step step--hidden container" data-class="step">
+            <header class="step__header">
+              <button class="step__button step__button--back button">Назад</button>
+              <h2 class="step__title title title--step">Чем питается ежик?</h2>
+            </header>
+            <fieldset class="step__list">
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="1" name="3-8">
+                <picture>
+                  <source srcset="img/items/honey.webp 1x, img/items/honey@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/honey.png" srcset="img/items/honey@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="2" name="3-8">
+                <picture>
+                  <source srcset="img/items/apple.webp 1x, img/items/apple@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/apple.png" srcset="img/items/apple@2x.png 2x" width="200" height="200" alt="" draggable="false">
+                </picture>
+              </label>
+              <label class="step__item">
+                <input class="step__radio visually-hidden" type="radio" value="3" name="3-8">
+                <picture>
+                  <source srcset="img/items/carrot.webp 1x, img/items/carrot@2x.webp 2x">
+                  <img class="step__image step__image--rounded" src="img/items/carrot.png" srcset="img/items/carrot@2x.png 2x" width="200" height="200" alt="" draggable="false">
                 </picture>
               </label>
             </fieldset>
@@ -114,7 +764,6 @@
             </li>
           </template>
         </ul>
-        <button class="end__button button button--end">завершить</button>
         <button class="end__button button button--again">начать заново</button>
       </section>
     </main>
