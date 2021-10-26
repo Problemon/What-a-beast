@@ -1,0 +1,134 @@
+.button {
+  display: block;
+  padding-top: 11px;
+  padding-bottom: 6px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border: 3px solid $color-amber;
+  border-radius: 150px;
+
+  font-size: 25px;
+  text-transform: uppercase;
+  color: $color-dark-green;
+
+  background-color: $color-dark-yellow;
+  user-select: none;
+  cursor: pointer;
+  transition: color 0.3s ease, backgroung-color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    color: $color-white;
+    background-color: $color-orange;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  @media (max-width: $desktop-width) {
+    font-size: 22px;
+  }
+
+  @media (max-width: 850px), (max-height: 850px) {
+    padding-top: 9px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+
+    font-size: 20px;
+  }
+
+  @media (max-width: 500px), (max-height: 500px) {
+    font-size: 18px;
+    padding-right: 18px;
+    padding-left: 18px;
+    padding-top: 8px;
+  }
+}
+
+.button--hidden {
+  visibility: hidden;
+}
+
+.button--play {
+  position: relative;
+
+  padding-top: 13px;
+  padding-bottom: 7px;
+  padding-right: 50px;
+  padding-left: 50px;
+
+  font-size: 47px;
+  -webkit-tap-highlight-color: transparent;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 195px;
+    bottom: 52px;
+
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+
+    background-image: url("../img/decor/butterfly.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @media (max-width: $desktop-width) {
+      right: 162px;
+      bottom: 50px;
+      width: 80px;
+      height: 80px;
+    }
+
+    @media (max-width: $tablet-width), (max-height: $tablet-width) {
+      right: 130px;
+      bottom: 43px;
+      width: 70px;
+      height: 70px;
+    }
+
+    @media (max-width: 500px), (max-height: 500px) {
+      right: 100px;
+      bottom: 38px;
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  @media (max-width: $desktop-width) {
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 40px;
+  }
+
+  @media (max-width: $tablet-width), (max-height: $tablet-width) {
+    padding-top: 11px;
+    padding-bottom: 6px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 35px;
+  }
+
+  @media (max-width: 500px), (max-height: 500px) {
+    margin-top: 10px;
+    padding-top: 9px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 30px;
+  }
+}
+
+.button--next {
+  color: $color-dark-yellow;
+
+  border-color: $color-dark-green;
+  background-color: $color-green;
+
+  &:hover {
+    color: $color-white;
+    background-color: $color-dark-green;
+  }
+}

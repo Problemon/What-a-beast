@@ -1,0 +1,45 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 320px;
+  height: 100%;
+  min-width: 320px;
+  margin: 0;
+
+  font-family: "Circe Rounded", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  font-style: normal;
+
+  overflow: hidden;
+}
+
+a,
+button {
+  font-family: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}

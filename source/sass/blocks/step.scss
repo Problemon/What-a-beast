@@ -1,0 +1,138 @@
+.step {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  grid-template-rows: max-content 1fr 50px;
+  grid-template-areas:
+    ".     title  ."
+    "step  step   step"
+    ".     .      .";
+  row-gap: 10px;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+
+  transition: opacity 1s ease;
+
+  @media (max-width: 850px) {
+    grid-template-columns: 70px 1fr 70px;
+    grid-template-rows: 50px max-content 1fr 50px;
+    grid-template-areas:
+      ".     .      ."
+      ".     title  ."
+      "step  step   step"
+      ".     .      .";
+  }
+
+  @media (max-width: 400px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "."
+      "title"
+      "step"
+      ".";
+  }
+}
+
+.step--hidden {
+  z-index: -1;
+  opacity: 0;
+}
+
+.step__header {
+  grid-area: title;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  margin-bottom: 100px;
+
+  @media (max-width: 850px), (max-height: 850px) {
+    grid-template-columns: 1fr;
+    font-size: 12.5px;
+  }
+
+  @media (max-width: 500px), (max-height: 500px) {
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 400px), (max-height: 400px) {
+    margin-bottom: 5px;
+  }
+}
+
+.step__title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.step__list {
+  grid-area: step;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.step__item {
+  margin-left: 30px;
+  margin-right: 30px;
+
+  cursor: pointer;
+
+  @media (max-width: $tablet-width) {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+.step__image {
+  width: 23em;
+  height: auto;
+  object-fit: contain;
+
+  font-size: 16px;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  transition: transform 0.3s ease;
+
+  @media (max-width: $desktop-width) {
+    font-size: 14.5px;
+  }
+
+  @media (max-width: 850px), (max-height: 850px)  {
+    font-size: 11px;
+  }
+
+  @media (max-width: $tablet-width), (max-height: $tablet-width) {
+    font-size: 8.5px;
+  }
+
+  @media (max-width: 600px), (max-height: 600px) {
+    font-size: 7px;
+  }
+
+  @media (max-width: 500px), (max-height: 500px) {
+    font-size: 6px;
+  }
+
+  @media (max-width: 400px), (max-height: 400px) {
+    font-size: 5px;
+  }
+}
+
+.step__image--rounded {
+  border-radius: 50%;
+  width: 14em;
+}
+
+.step__radio:checked ~ picture .step__image {
+  transform: scale(1.1);
+}

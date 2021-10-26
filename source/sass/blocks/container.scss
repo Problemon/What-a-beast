@@ -1,0 +1,21 @@
+.container {
+  padding-top: 50px;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-bottom: 50px;
+
+  @media (max-width: 850px), (max-height: 850px) {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  @media (max-height: 450px) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  @media (max-width: 450px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
