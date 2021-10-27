@@ -1,6 +1,7 @@
 import { removeClassHidden, addClassHidden } from './util.min.js';
 import { launchGame } from './game.min.js';
 
+const splashScreen = document.querySelector('.splash-screen')
 const gameEnd = document.querySelector('.end');
 const buttonAgain = gameEnd.querySelector('.button--again');
 const numberRightAnswers = gameEnd.querySelector('.end__right-answers');
@@ -37,8 +38,14 @@ const showEndGame = (givenRightAnswers) => {
   buttonAgain.addEventListener('click', onButtonAgain, {once: true});
 
   answersList.innerHTML = '';
+
   createRightAnswersList(givenRightAnswers);
-  removeClassHidden(gameEnd);
+  removeClassHidden(splashScreen);
+
+  setTimeout(() => {
+    addClassHidden(splashScreen);
+    removeClassHidden(gameEnd);
+  }, 3000)
 };
 
 export { showEndGame };

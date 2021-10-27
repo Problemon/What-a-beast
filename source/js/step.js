@@ -1,3 +1,4 @@
+import { DATA } from './data.min.js';
 import { showEndGame } from './end.min.js';
 import { backToElections } from './elections.min.js';
 import { addClassHidden, removeClassHidden } from './util.min.js';
@@ -7,6 +8,46 @@ const buttonNext = document.querySelector('.options__button--next');
 const buttonBack = document.querySelector('.options__button--back');
 
 let indexStep = 0;
+
+const renderStepAnswer = (image, indexImage, numbers, isRounded) => (`
+  <label class="step__item">
+    <input class="step__radio visually-hidden" type="radio" value="${indexImage + 1}" name="${numbers[0]}-${numbers[1]}">
+    <picture>
+      <source srcset="img/items/${image}.webp 1x, img/items/${image}@2x.webp 2x">
+      <img class="step__image ${isRounded ? 'step__image--rounded' : ''}" src="img/items/${image}.png" srcset="img/items/${image}@2x.png 2x" width="300" height="300" alt="" draggable="false">
+    </picture>
+    <div class="step__check-mark"></div>
+  </label>
+`)
+
+const renderStepAnswers = (dataStep, numbers) => {
+  const {images, isRounded} = dataStep;
+  const answersMarkup = images.map((image, indexImage) => renderStepAnswer(image, indexImage, numbers, isRounded));
+
+  return (`
+    <fieldset class="step__list">
+      ${answersMarkup.join('\n')}
+    </fieldset>
+  `)
+}
+
+const renderStep = (dataStep, numbers) => {
+  const {title} = dataStep;
+
+  return (`
+    <li class="level__step step step--hidden container" data-class="step">
+      <header class="step__header">
+        <h2 class="step__title title title--step">${title}</h2>
+      </header>
+        ${renderStepAnswers(dataStep, numbers)}
+    </li>
+  `)
+}
+
+const renderStepsOfLevel = (levelIndex) => {
+  const stepsOfLevel = DATA.STEPS[levelIndex];
+  return stepsOfLevel.map((dataStep, number) => renderStep(dataStep, [levelIndex, number]));
+}
 
 const steps = {
   level: null, // get from level.js
@@ -88,4 +129,4 @@ const onButtonBackClick = () => {
 buttonBack.addEventListener('click', () => onButtonBackClick());
 buttonNext.addEventListener('click', () => onButtonNextClick());
 
-export {steps};
+export {steps, renderStepsOfLevel};

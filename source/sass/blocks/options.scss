@@ -45,7 +45,6 @@
 
 .options__button--back {
   grid-area: back;
-  width: fit-content;
 
   @media (max-width: 850px) {
     justify-self: center;
@@ -54,6 +53,5 @@
 
 .options__button--next {
   grid-area: next;
-  width: fit-content;
   justify-self: center;
 }

@@ -1,5 +1,5 @@
 import { DATA } from './data.min.js'
-import { steps } from './step.min.js';
+import { steps, renderStepsOfLevel } from './step.min.js';
 import { removeClassHidden, addClassHidden } from './util.min.js';
 
 const gameLevels = document.querySelectorAll('.level');
@@ -19,5 +19,11 @@ const showLevel = (element) => {
   steps.givenRightAnswers = [];
   steps.showCurrentStep();
 };
+
+const renderSteps = () => {
+  gameLevels.forEach((level, levelIndex) => level.insertAdjacentHTML('beforeend', renderStepsOfLevel(levelIndex).join('\n')))
+};
+
+renderSteps();
 
 export { hideLevel, showLevel };

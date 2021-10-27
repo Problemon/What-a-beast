@@ -14,7 +14,7 @@
   width: 100%;
   height: 100vh;
   z-index: 2;
-
+  transition: opacity 1s ease;
 
   @media (max-width: 850px) {
     grid-template-columns: 70px 1fr 70px;
@@ -72,35 +72,30 @@
   grid-area: step;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-end;
   width: 100%;
   margin: 0;
   padding: 0;
+  padding-bottom: 100px;
   border: none;
-}
 
-.step__item {
-  margin-left: 30px;
-  margin-right: 30px;
+   @media (max-width: 600px), (max-height: 600px) {
+    padding-bottom: 70px;
+  }
 
-  cursor: pointer;
-
-  @media (max-width: $tablet-width) {
-    margin-left: 15px;
-    margin-right: 15px;
+  @media (max-width: 500px), (max-height: 500px) {
+    padding-bottom: 50px;
   }
 }
 
-.step__image {
-  width: 23em;
-  height: auto;
-  object-fit: contain;
+.step__item {
+  position: relative;
+
+  margin-left: 30px;
+  margin-right: 30px;
 
   font-size: 16px;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-
-  transition: transform 0.3s ease;
+  cursor: pointer;
 
   @media (max-width: $desktop-width) {
     font-size: 14.5px;
@@ -111,6 +106,9 @@
   }
 
   @media (max-width: $tablet-width), (max-height: $tablet-width) {
+    margin-left: 15px;
+    margin-right: 15px;
+
     font-size: 8.5px;
   }
 
@@ -127,11 +125,49 @@
   }
 }
 
-.step__image--rounded {
-  border-radius: 50%;
-  width: 14em;
+.step__image {
+  position: relative;
+  width: 23em;
+  height: auto;
+  object-fit: contain;
+
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  transition: transform 0.3s ease;
 }
 
-.step__radio:checked ~ picture .step__image {
-  transform: scale(1.1);
+.step__image--rounded {
+  width: 14em;
+  border-radius: 50%;
+}
+
+.step__check-mark {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  width: 3em;
+  height: 3em;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: -0.8em;
+    bottom: -0.3em;
+
+    width: 3em;
+    height: 3em;
+
+    background-image: url("../img/icons/check.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0;
+
+    transition: opacity 0.2s ease;
+  }
+}
+
+.step__radio:checked ~ .step__check-mark::after {
+  opacity: 1;
 }
