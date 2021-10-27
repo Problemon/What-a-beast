@@ -137,6 +137,10 @@
   transition: transform 0.3s ease;
 }
 
+.step__radio:checked ~ picture .step__image {
+  transform: scale(1.1);
+}
+
 .step__image--rounded {
   width: 14em;
   border-radius: 50%;
@@ -149,25 +153,31 @@
 
   width: 3em;
   height: 3em;
+  border: 0.15em solid $color-dark-yellow;
+  border-radius: 50%;
+  transform: scale(0);
+
+  opacity: 0;
+  background-color: $color-green;
+
+  transition: opacity 0.2s ease, transform 0.3s ease;
 
   &::after {
     content: "";
     position: absolute;
-    right: -0.8em;
-    bottom: -0.3em;
+    left: calc(50% - 1em);
+    top: calc(50% - 1em);
 
-    width: 3em;
-    height: 3em;
+    width: 2em;
+    height: 2em;
 
     background-image: url("../img/icons/check.svg");
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0;
-
-    transition: opacity 0.2s ease;
   }
 }
 
-.step__radio:checked ~ .step__check-mark::after {
+.step__radio:checked ~ .step__check-mark {
   opacity: 1;
+  transform: scale(1);
 }

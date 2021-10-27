@@ -144,13 +144,39 @@
 }
 
 .button--next {
+  position: relative;
+
+  padding-top: 9px;
+  padding-right: 50px;
+
   color: $color-dark-yellow;
 
   border-color: $color-dark-green;
   background-color: $color-green;
 
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0.5em;
+    top: calc(50% - 0.54em);
+
+    width: 1em;
+    height: 1em;
+    transform: rotate(90deg);
+
+    mask-image: url("../img/icons/up-arrow.svg");
+    mask-repeat: no-repeat;
+    background-color:  $color-dark-yellow;
+
+    transition: background-color 0.3s ease;
+  }
+
   &:hover {
     color: $color-white;
     background-color: $color-dark-green;
+
+    &::after {
+      background-color: $color-white;
+    }
   }
 }
