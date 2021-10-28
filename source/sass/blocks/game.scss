@@ -1,0 +1,30 @@
+.game__settings {
+  position: absolute;
+  right: 25px;
+  top: 50px;
+
+  z-index: 2;
+
+  @media (max-width: 850px), (max-height: 850px) {
+    top: 25px;
+  }
+
+  @media (max-height: 450px) {
+    top: 10px;
+  }
+
+  @media (max-width: 450px) {
+    right: 10px;
+  }
+}
+
+.game__popup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  z-index: 2;
+}

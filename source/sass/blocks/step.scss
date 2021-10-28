@@ -72,7 +72,7 @@
   grid-area: step;
   display: flex;
   justify-content: space-around;
-  align-items: flex-end;
+  align-items: center;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -101,7 +101,7 @@
     font-size: 14.5px;
   }
 
-  @media (max-width: 850px), (max-height: 850px)  {
+  @media (max-width: 850px)  {
     font-size: 11px;
   }
 

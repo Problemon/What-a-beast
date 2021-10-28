@@ -78,7 +78,11 @@
   color: $color-green;
 }
 
-.end__button {
+.end__buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 400px;
   margin-top: auto;
   margin-bottom: 70px;
 }

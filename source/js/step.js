@@ -3,6 +3,7 @@ import { showEndGame } from './end.min.js';
 import { backToElections } from './elections.min.js';
 import { addClassHidden, removeClassHidden } from './util.min.js';
 import { hideOptions } from './options.min.js';
+import { playSoundBubble } from './sound.min.js';
 
 const buttonNext = document.querySelector('.options__button--next');
 const buttonBack = document.querySelector('.options__button--back');
@@ -71,8 +72,12 @@ const steps = {
     return answerData;
   },
 
+  getCheckedAnswer() {
+    return this.stepList.querySelector('input:checked');
+  },
+
   checkAnswer() {
-    this.givenAnswerOfStep = this.stepList.querySelector('input:checked');
+    this.givenAnswerOfStep = this.getCheckedAnswer();
     const rightAnswerOfStep = this.rightAnswers[indexStep];
     const givenAnswerOfStepValue = Number(this.givenAnswerOfStep.value);
 
@@ -84,12 +89,24 @@ const steps = {
 
   onStepListChange () {
     buttonNext.classList.remove('button--hidden');
+    playSoundBubble();
+  },
+
+  clearStepListChange () {
+    this.stepList.removeEventListener('change', this.onStepListChange);
   },
 
   hideCurrentStep () {
-    addClassHidden(this.currentStep);
-    this.givenAnswerOfStep.checked = false;
+    const checkedAnswer = this.getCheckedAnswer();
+
+    if(checkedAnswer) {
+      checkedAnswer.checked = false;
+    }
+
     buttonNext.classList.add('button--hidden');
+
+    this.clearStepListChange ()
+    addClassHidden(this.currentStep);
   },
 
   showCurrentStep () {
@@ -97,7 +114,7 @@ const steps = {
     this.stepList = this.currentStep.querySelector('.step__list');
 
     removeClassHidden(this.currentStep);
-    this.stepList.addEventListener('change', () => this.onStepListChange(), {once: true});
+    this.stepList.addEventListener('change', this.onStepListChange);
   },
 };
 
