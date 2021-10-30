@@ -43,7 +43,7 @@
       </div>
       <div class="popup__fade"></div>
     </section>
-    <section class="game__menu menu menu--hidden container" data-class="menu">
+    <section class="game__menu menu container" data-class="menu">
       <picture>
         <source srcset="img/decor/title.webp 1x, img/decor/title@2x.webp 2x">
         <img class="menu__title" src="img/decor/title.png" srcset="img/decor/title@2x.webp 2x" width="500" height="400"
@@ -108,14 +108,19 @@
       <p class="end__text">
         <output class="end__right-answers">0&nbsp;</output>правильных ответов! А теперь придумайте историю из них:
       </p>
-      <ul class="end__answer-list">
-        <template id="answer">
-          <li class="end__answer-item">
-            <img class="end__answer-image" src="#" alt="">
-            <h3 class="end__answer-title">title</h3>
-          </li>
-        </template>
-      </ul>
+
+      <div class="end__glider glider-contain">
+        <ul class="end__answer-list glider">
+          <template id="answer">
+            <li class="end__answer-item">
+              <img class="end__answer-image" src="#" alt="">
+              <h3 class="end__answer-title">title</h3>
+            </li>
+          </template>
+        </ul>
+        <button aria-label="Previous" class="end__glider-prev glider-prev">«</button>
+        <button aria-label="Next" class="end__glider-next glider-next">»</button>
+      </div>
       <div class="end__buttons">
         <button class="end__button button button--again">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
@@ -134,6 +139,7 @@
       </div>
     </section>
   </main>
+  <script src="js/glider.min.js"></script>
   <script src="js/main.min.js" type="module"></script>
 </body>
 </html>

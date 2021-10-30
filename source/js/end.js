@@ -40,6 +40,15 @@ const showEndGame = (givenRightAnswers) => {
   answersList.innerHTML = '';
 
   createRightAnswersList(givenRightAnswers);
+  new Glider(document.querySelector('.glider'), {
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    draggable: true,
+    arrows: {
+      prev: '.glider-prev',
+      next: '.glider-next'
+    }
+  });
   removeClassHidden(splashScreen);
 
   setTimeout(() => {
