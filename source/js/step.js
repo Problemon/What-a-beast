@@ -89,7 +89,6 @@ const steps = {
 
   onStepListChange () {
     buttonNext.classList.remove('button--hidden');
-    playSoundBubble();
   },
 
   clearStepListChange () {

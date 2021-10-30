@@ -1,6 +1,7 @@
+const audio = new Audio();
+
 const backgroundMusic = {
   play () {
-    const audio = new Audio();
     audio.src = '../music/morning.mp3';
     audio.volume = 0.3;
     audio.loop = true;
@@ -9,8 +10,7 @@ const backgroundMusic = {
 }
 
 const playSoundBubble = () => {
-  const audio = new Audio();
-  audio.src = '../music/bubble.mp3';
+  audio.src = './music/bubble.mp3';
   audio.volume = 0.1;
   audio.play();
 }
