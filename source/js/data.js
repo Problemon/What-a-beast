@@ -1,10 +1,14 @@
 export const DATA = {
+  MENU: {
+    image: 'title',
+    background: 'bushes',
+  },
   ANSWERS: [
     [1, 1, 2, 3, 2, 1, 2, 1],
     [1, 2, 2, 1, 2, 3, 3, 1],
     [1, 2, 2, 1, 3, 2, 1, 2],
   ],
-  STEPS: [
+  LEVELS: [
     [
       {
         title: 'Где живет зайчик?',
@@ -130,6 +134,6 @@ export const DATA = {
         images: ['honey', 'apple', 'carrot'],
         isRounded: true,
       },
-    ]
-  ]
-}
+    ],
+  ],
+};

@@ -44,11 +44,6 @@
       <div class="popup__fade"></div>
     </section>
     <section class="game__menu menu container" data-class="menu">
-      <picture>
-        <source srcset="img/decor/title.webp 1x, img/decor/title@2x.webp 2x">
-        <img class="menu__title" src="img/decor/title.png" srcset="img/decor/title@2x.webp 2x" width="500" height="400"
-          alt="Кто живет в лесу?" draggable="false">
-      </picture>
       <button class="menu__button menu__button--next button button--play">Играть!</button>
     </section>
 
@@ -87,12 +82,6 @@
     </section>
 
     <section class="game__options options options--hidden container" data-class="options">
-      <ul class="options__level level level--hidden" data-class="level">
-      </ul>
-      <ul class="options__level level level--hidden" data-class="level">
-      </ul>
-      <ul class="options__level level level--hidden" data-class="level">
-      </ul>
       <button class="options__button options__button--back button button--back">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
           <path d="M288,192H200.84l27.58-27.58a21.33,21.33,0,1,0-30.17-30.17l-64,64a21.33,21.33,0,0,0,0,30.17l64,64a21.33,21.33,0,0,0,30.17-30.17l-27.58-27.58H288a53.33,53.33,0,0,1,0,106.67H256A21.33,21.33,0,0,0,256,384h32a96,96,0,0,0,0-192Z"/>
@@ -111,12 +100,6 @@
 
       <div class="end__glider glider-contain">
         <ul class="end__answer-list glider">
-          <template id="answer">
-            <li class="end__answer-item">
-              <img class="end__answer-image" src="#" alt="">
-              <h3 class="end__answer-title">title</h3>
-            </li>
-          </template>
         </ul>
         <button aria-label="Previous" class="end__glider-prev glider-prev">«</button>
         <button aria-label="Next" class="end__glider-next glider-next">»</button>
@@ -139,7 +122,8 @@
       </div>
     </section>
   </main>
+  <span class="game__ver">1.02</span>
   <script src="js/glider.min.js"></script>
-  <script src="js/main.min.js" type="module"></script>
+  <script src="js/game.min.js" type="module"></script>
 </body>
 </html>

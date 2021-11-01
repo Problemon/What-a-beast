@@ -1,29 +1,43 @@
-import { DATA } from './data.min.js'
-import { steps, renderStepsOfLevel } from './step.min.js';
+import { DATA } from './data.min.js';
+import { setLogicOfSteps} from './step.min.js';
 import { removeClassHidden, addClassHidden } from './util.min.js';
 
-const gameLevels = document.querySelectorAll('.level');
+const gameOptions = document.querySelector('.options');
+
+const templateLevel = () => (`
+  <ul class="options__level level level--hidden" data-class="level">
+  </ul>
+`);
+
+const renderLevels = () => {
+  const nodeLevels = DATA.LEVELS.map(() => templateLevel());
+
+  gameOptions.insertAdjacentHTML('afterbegin', nodeLevels.join('\n'));
+};
+
+const hideOptions = () => {
+  addClassHidden(gameOptions);
+};
+
+const showOptions = () => {
+  removeClassHidden(gameOptions);
+};
 
 const hideLevel = (level) => {
   addClassHidden(level);
+
+  hideOptions();
 };
 
-const showLevel = (element) => {
-  const indexLevel = Number(element.dataset.number) - 1;
+const showLevel = (indexLevel) => {
+  const gameLevels = gameOptions.querySelectorAll('.level');
+
   const currentLevel = gameLevels[indexLevel];
   const rightAnswersOfLevel = DATA.ANSWERS[indexLevel];
 
+  showOptions();
   removeClassHidden(currentLevel);
-  steps.level = currentLevel;
-  steps.rightAnswers = rightAnswersOfLevel;
-  steps.givenRightAnswers = [];
-  steps.showCurrentStep();
+  setLogicOfSteps(currentLevel, rightAnswersOfLevel);
 };
 
-const renderSteps = () => {
-  gameLevels.forEach((level, levelIndex) => level.insertAdjacentHTML('beforeend', renderStepsOfLevel(levelIndex).join('\n')))
-};
-
-renderSteps();
-
-export { hideLevel, showLevel };
+export { hideLevel, showLevel, renderLevels };

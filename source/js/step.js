@@ -2,11 +2,17 @@ import { DATA } from './data.min.js';
 import { showEndGame } from './end.min.js';
 import { backToElections } from './elections.min.js';
 import { addClassHidden, removeClassHidden } from './util.min.js';
-import { hideOptions } from './options.min.js';
-import { playSoundBubble } from './sound.min.js';
 
 const buttonNext = document.querySelector('.options__button--next');
 const buttonBack = document.querySelector('.options__button--back');
+
+let steps;
+let givenRightAnswers = [];
+let givenNodeAnswer;
+let currentStep;
+let stepList;
+let currentLevel;
+let currentRightAnswers;
 
 let indexStep = 0;
 
@@ -19,7 +25,7 @@ const renderStepAnswer = (image, indexImage, numbers, isRounded) => (`
     </picture>
     <div class="step__check-mark"></div>
   </label>
-`)
+`);
 
 const renderStepAnswers = (dataStep, numbers) => {
   const {images, isRounded} = dataStep;
@@ -29,8 +35,8 @@ const renderStepAnswers = (dataStep, numbers) => {
     <fieldset class="step__list">
       ${answersMarkup.join('\n')}
     </fieldset>
-  `)
-}
+  `);
+};
 
 const renderStep = (dataStep, numbers) => {
   const {title} = dataStep;
@@ -42,107 +48,117 @@ const renderStep = (dataStep, numbers) => {
       </header>
         ${renderStepAnswers(dataStep, numbers)}
     </li>
-  `)
-}
+  `);
+};
 
-const renderStepsOfLevel = (levelIndex) => {
-  const stepsOfLevel = DATA.STEPS[levelIndex];
-  return stepsOfLevel.map((dataStep, number) => renderStep(dataStep, [levelIndex, number]));
-}
+const renderStepsOfLevel = (level, levelIndex) => {
+  const dataStepsOfLevel = DATA.LEVELS[levelIndex];
 
-const steps = {
-  level: null, // get from level.js
-  rightAnswers: null, // get from level.js
-  givenRightAnswers: null, // get from level.js
+  const nodeSteps = dataStepsOfLevel.map((dataStep, number) => {
+    const nodeStep = renderStep(dataStep, [levelIndex, number]);
 
-  getCurrentStep () {
-    this.steps = this.level.querySelectorAll('.step');
-    return this.steps[indexStep];
-  },
+    return nodeStep;
+  });
 
-  getDataOfAnswer(element) {
-    const stepItem = element.closest('.step__item');
-    const stepItemImageSrc = stepItem.querySelector('.step__image').src;
-    const stepTitleText = this.currentStep.querySelector('.step__title').textContent;
-    const answerData = {
-      image: stepItemImageSrc,
-      title: stepTitleText,
-    };
+  level.insertAdjacentHTML('beforeend', nodeSteps.join('\n'));
+};
 
-    return answerData;
-  },
+const renderSteps = (levels) => {
+  levels.forEach((level, levelIndex) => renderStepsOfLevel(level, levelIndex));
+};
 
-  getCheckedAnswer() {
-    return this.stepList.querySelector('input:checked');
-  },
+const onStepListChange = () => {
+  buttonNext.classList.remove('button--hidden');
+};
 
-  checkAnswer() {
-    this.givenAnswerOfStep = this.getCheckedAnswer();
-    const rightAnswerOfStep = this.rightAnswers[indexStep];
-    const givenAnswerOfStepValue = Number(this.givenAnswerOfStep.value);
+const showCurrentStep = () => {
+  currentStep = steps[indexStep];
+  stepList = currentStep.querySelector('.step__list');
 
-    if (rightAnswerOfStep === givenAnswerOfStepValue) {
-      const dataOfAnswer = this.getDataOfAnswer(this.givenAnswerOfStep);
-      this.givenRightAnswers.push(dataOfAnswer);
-    }
-  },
+  removeClassHidden(currentStep);
+  stepList.addEventListener('change', onStepListChange);
+};
 
-  onStepListChange () {
-    buttonNext.classList.remove('button--hidden');
-  },
+const getCheckedAnswer = () => stepList.querySelector('input:checked');
 
-  clearStepListChange () {
-    this.stepList.removeEventListener('change', this.onStepListChange);
-  },
+const getDataOfAnswer = (element) => {
+  const stepItem = element.closest('.step__item');
+  const stepItemImageSrc = stepItem.querySelector('.step__image').src;
+  const stepTitleText = currentStep.querySelector('.step__title').textContent;
+  const answerData = {
+    image: stepItemImageSrc,
+    title: stepTitleText,
+  };
 
-  hideCurrentStep () {
-    const checkedAnswer = this.getCheckedAnswer();
+  return answerData;
+};
 
-    if(checkedAnswer) {
-      checkedAnswer.checked = false;
-    }
+const clearStepListChange = () => {
+  stepList.removeEventListener('change', onStepListChange);
+};
 
-    buttonNext.classList.add('button--hidden');
+const hideCurrentStep = () => {
+  const checkedAnswer = getCheckedAnswer();
 
-    this.clearStepListChange ()
-    addClassHidden(this.currentStep);
-  },
+  if(checkedAnswer) {
+    checkedAnswer.checked = false;
+  }
 
-  showCurrentStep () {
-    this.currentStep = this.getCurrentStep();
-    this.stepList = this.currentStep.querySelector('.step__list');
+  buttonNext.classList.add('button--hidden');
 
-    removeClassHidden(this.currentStep);
-    this.stepList.addEventListener('change', this.onStepListChange);
-  },
+  clearStepListChange();
+  addClassHidden(currentStep);
+};
+
+const checkAnswer = () => {
+  givenNodeAnswer = getCheckedAnswer();
+  const rightAnswerOfStep = currentRightAnswers[indexStep];
+  const givenAnswerOfStepValue = Number(givenNodeAnswer.value);
+
+  if (rightAnswerOfStep === givenAnswerOfStepValue) {
+    const dataOfAnswer = getDataOfAnswer(givenNodeAnswer);
+    givenRightAnswers.push(dataOfAnswer);
+  }
 };
 
 const onButtonNextClick = () => {
-  steps.checkAnswer();
+  checkAnswer();
 
-  if (indexStep === steps.steps.length - 1) {
-    hideOptions();
-    steps.hideCurrentStep();
-    showEndGame(steps.givenRightAnswers);
+  if (indexStep === steps.length - 1) {
+    hideCurrentStep();
+
+    showEndGame(currentLevel, givenRightAnswers);
+
+    givenRightAnswers = [];
+
     indexStep = 0;
+
   } else {
-    steps.hideCurrentStep();
+    hideCurrentStep();
     indexStep += 1;
-    steps.showCurrentStep();
+    showCurrentStep();
   }
 };
 
 const onButtonBackClick = () => {
   if (indexStep === 0) {
-    backToElections(steps.level);
+    backToElections(currentLevel);
   } else {
-    steps.hideCurrentStep();
+    hideCurrentStep();
     indexStep -= 1;
-    steps.showCurrentStep();
+    showCurrentStep();
   }
+};
+
+const setLogicOfSteps = (level, rightAnswers) => {
+  currentLevel = level;
+  currentRightAnswers = rightAnswers;
+  steps = level.querySelectorAll('.step');
+
+  showCurrentStep();
 };
 
 buttonBack.addEventListener('click', () => onButtonBackClick());
 buttonNext.addEventListener('click', () => onButtonNextClick());
 
-export {steps, renderStepsOfLevel};
+export {setLogicOfSteps, renderSteps};

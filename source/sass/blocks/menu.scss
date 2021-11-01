@@ -7,9 +7,9 @@
   justify-content: center;
   height: 100vh;
 
-  background-image: url("../img/background/bushes.jpg");
   background-size: cover;
   background-position: center;
+
   transition: opacity 1s ease;
 
   &::before {

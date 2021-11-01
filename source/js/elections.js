@@ -1,7 +1,6 @@
 import { addClassHidden, removeClassHidden } from './util.min.js';
 import { showMenu } from './menu.min.js';
 import { showLevel, hideLevel } from './level.min.js';
-import { hideOptions, showOptions } from './options.min.js';
 
 const gameElections = document.querySelector('.elections');
 const gameElectionsList = document.querySelector('.elections__list');
@@ -18,11 +17,11 @@ const onButtonBackElectionsClick = () => {
 
 const onElectionsClick = (evt) => {
   const electionsItem = evt.target.closest('.elections__item');
+  const indexLevel = Number(electionsItem.dataset.number) - 1;
 
   if (electionsItem) {
     hideElections();
-    showOptions();
-    showLevel(electionsItem);
+    showLevel(indexLevel);
   }
 };
 
@@ -35,7 +34,6 @@ const showElections = () => {
 
 const backToElections = (level) => {
   showElections();
-  hideOptions();
   hideLevel(level);
 };
 
