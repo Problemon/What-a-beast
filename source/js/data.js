@@ -3,11 +3,19 @@ export const DATA = {
     image: 'title',
     background: 'bushes',
   },
+  ELECTIONS: {
+    title: 'Выберите Зверька',
+    images: ['bunny', 'bear', 'hedgehog'],
+    background: 'bushes',
+  },
   ANSWERS: [
     [1, 1, 2, 3, 2, 1, 2, 1],
     [1, 2, 2, 1, 2, 3, 3, 1],
     [1, 2, 2, 1, 3, 2, 1, 2],
   ],
+  OPTIONS: {
+    background: 'cloud',
+  },
   LEVELS: [
     [
       {

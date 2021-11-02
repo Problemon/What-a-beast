@@ -11,6 +11,10 @@
 </head>
 
 <body class="game">
+  <div class="game__preloader preloader" data-class="preloader">
+    <div class="preloader__loader"></div>
+  </div>
+
   <h1 class="visually-hidden">Главное меню</h1>
   <main class="game__main">
     <button class="game__settings button button--settings">
@@ -54,30 +58,8 @@
             <path d="M288,192H200.84l27.58-27.58a21.33,21.33,0,1,0-30.17-30.17l-64,64a21.33,21.33,0,0,0,0,30.17l64,64a21.33,21.33,0,0,0,30.17-30.17l-27.58-27.58H288a53.33,53.33,0,0,1,0,106.67H256A21.33,21.33,0,0,0,256,384h32a96,96,0,0,0,0-192Z"/>
           </svg>
         </button>
-        <h2 class="elections__title title">Выберите зверька</h2>
       </header>
       <ul class="elections__list">
-        <li class="elections__item" data-number="1">
-          <picture>
-            <source srcset="img/items/bunny.webp 1x, img/items/bunny@2x.webp 2x">
-            <img class="elections__image" src="img/items/bunny.png" srcset="img/items/bunny@2x.png 2x" width="200"
-              height="200" alt="" draggable="false">
-          </picture>
-        </li>
-        <li class="elections__item" data-number="2">
-          <picture>
-            <source srcset="img/items/bear.webp 1x, img/items/bear@2x.webp 2x">
-            <img class="elections__image" src="img/items/bear.png" srcset="img/items/bear@2x.png 2x" width="200"
-              height="200" alt="" draggable="false">
-          </picture>
-        </li>
-        <li class="elections__item" data-number="3">
-          <picture>
-            <source srcset="img/items/hedgehog.webp 1x, img/items/hedgehog@2x.webp 2x">
-            <img class="elections__image" src="img/items/hedgehog.png" srcset="img/items/hedgehog@2x.png 2x" width="200"
-              height="200" alt="" draggable="false">
-          </picture>
-        </li>
       </ul>
     </section>
 
@@ -122,7 +104,7 @@
       </div>
     </section>
   </main>
-  <span class="game__ver">1.02</span>
+  <span class="game__ver">1.12</span>
   <script src="js/glider.min.js"></script>
   <script src="js/game.min.js" type="module"></script>
 </body>

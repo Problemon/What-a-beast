@@ -130,9 +130,7 @@ const onButtonNextClick = () => {
     showEndGame(currentLevel, givenRightAnswers);
 
     givenRightAnswers = [];
-
     indexStep = 0;
-
   } else {
     hideCurrentStep();
     indexStep += 1;
@@ -143,6 +141,8 @@ const onButtonNextClick = () => {
 const onButtonBackClick = () => {
   if (indexStep === 0) {
     backToElections(currentLevel);
+
+    givenRightAnswers = [];
   } else {
     hideCurrentStep();
     indexStep -= 1;
