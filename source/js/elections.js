@@ -27,7 +27,7 @@ const renderElections = () => {
 
   const nodeElectionsItems = images.map((image, index) => templateElectionsItem(image, index + 1));
 
-  gameElections.style.backgroundImage = `url("../img/background/${background}.jpg")`;
+  gameElections.style.backgroundImage = `url("img/background/${background}.jpg")`;
 
   gameElectionHeader.insertAdjacentHTML('beforeend', templateElectionsTitle(title));
   gameElectionsList.insertAdjacentHTML('beforeend', nodeElectionsItems.join('\n'));

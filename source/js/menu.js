@@ -18,7 +18,7 @@ const renderMenu = () => {
 
   gameMenu.insertAdjacentHTML('afterbegin', templateMenu(image));
 
-  gameMenu.style.backgroundImage = `url("../img/background/${background}.jpg")`;
+  gameMenu.style.backgroundImage = `url("img/background/${background}.jpg")`;
 };
 
 const hideMenu = () => {

@@ -13,7 +13,7 @@ const renderLevels = () => {
   const nodeLevels = DATA.LEVELS.map(() => templateLevel());
   const {background} = DATA.OPTIONS;
 
-  gameOptions.style.backgroundImage = `url("../img/background/${background}.jpg")`;
+  gameOptions.style.backgroundImage = `url("img/background/${background}.jpg")`;
   gameOptions.insertAdjacentHTML('afterbegin', nodeLevels.join('\n'));
 };
 
