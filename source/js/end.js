@@ -9,9 +9,10 @@ const numberRightAnswers = gameEnd.querySelector('.end__right-answers');
 const answersList = gameEnd.querySelector('.end__answer-list');
 
 const glider = new Glider (answersList, {
-  slidesToShow: 3,
+  slidesToShow: 2,
   slidesToScroll: 1,
-  draggable: false,
+  scrollLock: true,
+  scrollPropagate: true,
   arrows: {
     prev: '.glider-prev',
     next: '.glider-next',
@@ -31,17 +32,16 @@ const onButtonAgain = () => {
   gliderInner.innerHTML = '';
 };
 
-const templateAnswerItem = (img, title) => (`
+const templateAnswerItem = (img) => (`
     <li class="end__answer-item">
       <img class="end__answer-image" src="${img}" alt="">
-      <h3 class="end__answer-title">${title}</h3>
     </li>
 `);
 
 const createRightAnswersList = (dataOfAnswers) => {
   const answersItems = dataOfAnswers.map((item) => {
-    const {image, title} = item;
-    return templateAnswerItem(image, title);
+    const {image} = item;
+    return templateAnswerItem(image);
   });
 
   gliderInner.insertAdjacentHTML('beforeend', answersItems.join('\n'));
@@ -56,8 +56,8 @@ const showEndGameAnimation = () => {
   }, 3000);
 };
 
-const showEndGame = (level, givenRightAnswers) => {
-  numberRightAnswers.innerHTML = `${givenRightAnswers.length}&nbsp;`;
+const showEndGame = (level, givenRightAnswers, rightAnswers) => {
+  numberRightAnswers.innerHTML = `${givenRightAnswers.length} / ${rightAnswers.length}&nbsp;`;
   buttonAgain.addEventListener('click', onButtonAgain, {once: true});
 
   hideLevel(level);

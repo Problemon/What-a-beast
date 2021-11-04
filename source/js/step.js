@@ -84,10 +84,8 @@ const getCheckedAnswer = () => stepList.querySelector('input:checked');
 const getDataOfAnswer = (element) => {
   const stepItem = element.closest('.step__item');
   const stepItemImageSrc = stepItem.querySelector('.step__image').src;
-  const stepTitleText = currentStep.querySelector('.step__title').textContent;
   const answerData = {
     image: stepItemImageSrc,
-    title: stepTitleText,
   };
 
   return answerData;
@@ -127,7 +125,7 @@ const onButtonNextClick = () => {
   if (indexStep === steps.length - 1) {
     hideCurrentStep();
 
-    showEndGame(currentLevel, givenRightAnswers);
+    showEndGame(currentLevel, givenRightAnswers, currentRightAnswers);
 
     givenRightAnswers = [];
     indexStep = 0;
