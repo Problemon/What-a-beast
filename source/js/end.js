@@ -30,6 +30,12 @@ const onButtonAgain = () => {
   hideEndGame();
   launchGame();
   gliderInner.innerHTML = '';
+
+  localStorage.removeItem('isEnded');
+  localStorage.removeItem('rightAnswers');
+  localStorage.removeItem('givenRightAnswers');
+  localStorage.removeItem('level');
+  localStorage.removeItem('indexLevel');
 };
 
 const templateAnswerItem = (img) => (`
@@ -57,6 +63,8 @@ const showEndGameAnimation = () => {
 };
 
 const showEndGame = (level, givenRightAnswers, rightAnswers) => {
+  localStorage.setItem('isEnded', true);
+
   numberRightAnswers.innerHTML = `${givenRightAnswers.length} / ${rightAnswers.length}&nbsp;`;
   buttonAgain.addEventListener('click', onButtonAgain, {once: true});
 
@@ -66,6 +74,7 @@ const showEndGame = (level, givenRightAnswers, rightAnswers) => {
   glider.refresh(true);
 
   showEndGameAnimation();
+
 };
 
 export { showEndGame };

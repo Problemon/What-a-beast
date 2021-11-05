@@ -120,14 +120,10 @@
   color: $color-green;
 }
 
-.end__buttons {
+.end__button {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
   max-width: 400px;
   margin-bottom: 70px;
-
-  font-size: 16px;
 
   @media (max-width: $tablet-width), (max-height: $tablet-width) {
     margin-bottom: 50px;

@@ -46,6 +46,8 @@ const onElectionsClick = (evt) => {
   const electionsItem = evt.target.closest('.elections__item');
   const indexLevel = Number(electionsItem.dataset.number) - 1;
 
+  localStorage.setItem('indexLevel', String(indexLevel));
+
   if (electionsItem) {
     hideElections();
     showLevel(indexLevel);

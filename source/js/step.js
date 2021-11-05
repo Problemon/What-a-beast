@@ -7,14 +7,18 @@ const buttonNext = document.querySelector('.options__button--next');
 const buttonBack = document.querySelector('.options__button--back');
 
 let steps;
-let givenRightAnswers = [];
 let givenNodeAnswer;
 let currentStep;
 let stepList;
 let currentLevel;
 let currentRightAnswers;
 
-let indexStep = 0;
+let givenRightAnswers = [];
+let indexStep = Number(localStorage.getItem('indexStep'));
+
+if (!indexStep) {
+  indexStep = 0;
+}
 
 const renderStepAnswer = (image, indexImage, numbers, isRounded) => (`
   <label class="step__item">
@@ -53,12 +57,7 @@ const renderStep = (dataStep, numbers) => {
 
 const renderStepsOfLevel = (level, levelIndex) => {
   const dataStepsOfLevel = DATA.LEVELS[levelIndex];
-
-  const nodeSteps = dataStepsOfLevel.map((dataStep, number) => {
-    const nodeStep = renderStep(dataStep, [levelIndex, number]);
-
-    return nodeStep;
-  });
+  const nodeSteps = dataStepsOfLevel.map((dataStep, number) => renderStep(dataStep, [levelIndex, number]));
 
   level.insertAdjacentHTML('beforeend', nodeSteps.join('\n'));
 };
@@ -116,6 +115,8 @@ const checkAnswer = () => {
   if (rightAnswerOfStep === givenAnswerOfStepValue) {
     const dataOfAnswer = getDataOfAnswer(givenNodeAnswer);
     givenRightAnswers.push(dataOfAnswer);
+
+    localStorage.setItem('givenRightAnswers', JSON.stringify(givenRightAnswers));
   }
 };
 
@@ -124,14 +125,17 @@ const onButtonNextClick = () => {
 
   if (indexStep === steps.length - 1) {
     hideCurrentStep();
-
     showEndGame(currentLevel, givenRightAnswers, currentRightAnswers);
 
     givenRightAnswers = [];
     indexStep = 0;
+    localStorage.removeItem('indexStep');
   } else {
     hideCurrentStep();
+
     indexStep += 1;
+    localStorage.setItem('indexStep', indexStep);
+
     showCurrentStep();
   }
 };
@@ -141,16 +145,34 @@ const onButtonBackClick = () => {
     backToElections(currentLevel);
 
     givenRightAnswers = [];
+
+    localStorage.removeItem('givenRightAnswers');
+    localStorage.removeItem('indexStep');
+    localStorage.removeItem('indexLevel');
   } else {
     hideCurrentStep();
+
     indexStep -= 1;
+    localStorage.setItem('indexStep', indexStep);
+
     showCurrentStep();
   }
 };
 
+const checkStorageRignAnswers = () => {
+  const inStorage = JSON.parse(localStorage.getItem('givenRightAnswers'));
+  if (inStorage) {
+    givenRightAnswers = inStorage;
+  }
+};
+
 const setLogicOfSteps = (level, rightAnswers) => {
+  localStorage.setItem('rightAnswers', JSON.stringify(rightAnswers));
+
   currentLevel = level;
   currentRightAnswers = rightAnswers;
+  checkStorageRignAnswers();
+
   steps = level.querySelectorAll('.step');
 
   showCurrentStep();
