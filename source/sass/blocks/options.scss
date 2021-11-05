@@ -16,17 +16,9 @@
   height: 100vh;
   z-index: 1;
 
-  background-image: url("../img/background/cloud.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   transition: opacity 1s ease;
-
-  @media (max-width: 850px) {
-    grid-template-areas:
-    ".     back  ."
-    "level level level"
-    ".     next  .";
-  }
 }
 
 .options--hidden {
@@ -45,15 +37,9 @@
 
 .options__button--back {
   grid-area: back;
-  width: fit-content;
-
-  @media (max-width: 850px) {
-    justify-self: center;
-  }
 }
 
 .options__button--next {
   grid-area: next;
-  width: fit-content;
   justify-self: center;
 }

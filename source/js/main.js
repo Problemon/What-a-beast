@@ -1,1 +1,0 @@
-import './game.min.js';

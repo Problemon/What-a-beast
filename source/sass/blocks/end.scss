@@ -10,6 +10,7 @@
   height: 100vh;
 
   background-color: $color-sky-blue;
+  transition: opacity 1s ease;
 }
 
 .end--hidden {
@@ -21,6 +22,10 @@
   padding-top: 20px;
   margin-top: 0;
   margin-bottom: 40px;
+
+  @media (max-height: $desktop-width) {
+    margin-bottom: 20px;
+  }
 }
 
 .end__text {
@@ -41,17 +46,28 @@
   font-weight: 700;
 }
 
-.end__answer-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 175px);
+.end__glider {
+  display: flex;
   justify-content: center;
-  column-gap: 40px;
-  row-gap: 40px;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  font-size: 80px;
+
+  @media (max-width: $tablet-width) {
+    font-size: 60px;
+  }
+}
+
+.end__answer-list {
   width: 100%;
   margin-top: 0;
   margin-bottom: 0;
-  padding-left: 20px;
-  padding-right: 20px;
+  margin-left: 1em;
+  margin-right: 1em;
+  padding-left: 0;
+
+  font-size: inherit;
 
   list-style: none;
 }
@@ -63,14 +79,41 @@
 }
 
 .end__answer-image {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 20px;
+  display: block;
+  width: 300px;
+  height: 300px;
+
+  @media (max-width: 850px) {
+    width: 250px;
+    height: 250px;
+  }
+
+  @media (max-width: $tablet-width), (max-height: $tablet-width) {
+    width: 200px;
+    height: 200px;
+  }
+
+  @media (max-width: 600px), (max-height: 600px) {
+    width: 120px;
+    height: 120px;
+  }
+
+  @media (max-width: 500px), (max-height: 500px) {
+    width: 80px;
+    height: 80px;
+  }
+
+  @media (max-width: 400px), (max-height: 400px) {
+    width: 60px;
+    height: 60px;
+  }
 }
 
 .end__answer-title {
   margin-top: 0;
   margin-bottom: 0;
+  padding-right: 10px;
+  padding-left: 10px;
 
   font-size: 22px;
   text-align: center;
@@ -78,6 +121,31 @@
 }
 
 .end__button {
-  margin-top: auto;
+  display: flex;
+  max-width: 400px;
   margin-bottom: 70px;
+
+  @media (max-width: $tablet-width), (max-height: $tablet-width) {
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 600px), (max-height: 600px) {
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 500px), (max-height: 500px) {
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 400px), (max-height: 400px) {
+    margin-bottom: 5px;
+  }
+}
+
+.end__glider-prev {
+  left: 0;
+}
+
+.end__glider-next {
+  right: 0;
 }
